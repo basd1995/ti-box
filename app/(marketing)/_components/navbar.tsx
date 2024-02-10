@@ -4,6 +4,7 @@ import { useScrollTop } from "@/hooks/use-scroll-top";
 import { cn } from "@/lib/utils";
 import Logo from "./logo";
 import { Button } from "@/components/ui/button";
+import ModeToggle from "@/components/mode-toggle";
 
 const Navbar = () => {
 
@@ -23,7 +24,7 @@ const Navbar = () => {
         <Button size="sm">
           Get TiBox free
         </Button>
-
+        <ModeToggle />
       </div>
     </div>
   );
