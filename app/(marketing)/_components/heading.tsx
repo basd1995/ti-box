@@ -1,5 +1,9 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
+
 const Heading = () => {
   return (
     <div className="max-w-3xl space-y-4">
@@ -10,6 +14,17 @@ const Heading = () => {
         TiBox is the connected workspace where <br />
         better, faster work happens.
       </h3>
+      <Button asChild>
+        <Link href="/documents">
+          Enter TiBox
+          <ArrowRight className="h-4 w-4 ml-2" />
+        </Link>
+      </Button>
+
+      {/* <Button variant="outline">
+        Get TiBox free
+        <ArrowRight className="h-4 w-4 ml-2" />
+      </Button> */}
     </div>
   );
 }

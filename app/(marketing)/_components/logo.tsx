@@ -7,26 +7,40 @@ const font = Poppins({
   weight: ["400", "600"]
 });
 
-const Logo = () => {
+const Logo = ({
+  showLogo = true,
+  showText = true
+}) => {
   return (
     <div className="hidden md:flex items-center gap-x-2">
-      <Image
-        src="/logo.svg"
-        height="40"
-        width="40"
-        alt="Logo"
-        className="dark:hidden"
-      />
-      <Image
-        src="/logo-dark.svg"
-        height="40"
-        width="40"
-        alt="Logo"
-        className="hidden dark:block"
-      />
-      <p className={cn("font-semibold", font.className)}>
-        Tibox
-      </p>
+      {
+        showLogo && (
+          <>
+            <Image
+              src="/logo.svg"
+              height="40"
+              width="40"
+              alt="Logo"
+              className="dark:hidden"
+            />
+            <Image
+              src="/logo-dark.svg"
+              height="40"
+              width="40"
+              alt="Logo"
+              className="hidden dark:block"
+            />
+          </>
+        )
+      }
+      {
+        showText && (
+          <p className={cn("font-semibold", font.className)}>
+            Tibox
+          </p>
+        )
+      }
+
     </div>
   );
 }
